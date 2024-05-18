@@ -18,9 +18,9 @@
         <div id="songTitle">Title</div>
         <div class="row2">
             <div class="play">
-                <img src="images/previous.png" alt="previous" id="prev" />
+                <img src="images/previous.png" alt="previous" id="prev" onclick="prev()"/>
                 <img src="images/play-button-arrowhead.png" alt="play-button-arrowhead" id="play" onclick="playOrPauseSong()"/>
-                <img src="images/next.png" alt="next" id="next" />
+                <img src="images/next.png" alt="next" id="next" onclick="next()" />
             </div>
             <div class="seek-bar">
                 <div class="handle">
@@ -32,9 +32,9 @@
             <div class="mute">
                 <div class="currentTime">00:00 / 00:00</div>
                 <div class="muteButtons">
-                    <img src="images/volume-down.png" id="decrease">
-                    <img src="images/volume.png" id="mute">
-                    <img src="images/increase-volume.png" id="increase">
+                    <img src="images/volume-down.png" id="decrease" onclick="decrease()">
+                    <img src="images/volume.png" id="mute" onclick="mute()">
+                    <img src="images/increase-volume.png" id="increase" onclick="increase()">
                 </div>
             </div>
         </div>
