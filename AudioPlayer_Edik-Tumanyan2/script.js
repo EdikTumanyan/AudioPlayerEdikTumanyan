@@ -1,14 +1,17 @@
+const handle = document.querySelector('.handle')
+const fill = document.querySelector('.fill');
+const main = document.getElementById('main')
 let data = {
     title: [
-        "Aria Math",
-        "Gangsta's Paradise",
-        "I'm Still Standing",
-        "Believer",
-        "Little Dark Age",
-        "Billie Jean",
-        "Happy",
-        "Bohemian Rhapsody",
-        "Blinding Lights",
+        "C418 - Aria Math",
+        "Coolio - Gangsta's Paradise",
+        "Elton John - I'm Still Standing",
+        "Imagine Dragons - Believer",
+        "MGMT - Little Dark Age",
+        "Michael Jackson - Billie Jean",
+        "Pharrell Williams - Happy",
+        "Queen - Bohemian Rhapsody",
+        "The Weeknd - Blinding Lights",
     ],
 
     song: [
@@ -24,8 +27,8 @@ let data = {
     ],
 
     poster: [
-        "https://media3.giphy.com/media/Wxc9iA6vBWMP9jbMjn/200w.gif?cid=6c09b952zt09oew5svjy3nehwfag00tnh6p6nw18n5acsbjb&ep=v1_gifs_search&rid=200w.gif&ct=g",
-        "https://media3.giphy.com/media/Wxc9iA6vBWMP9jbMjn/200w.gif?cid=6c09b952zt09oew5svjy3nehwfag00tnh6p6nw18n5acsbjb&ep=v1_gifs_search&rid=200w.gif&ct=g",
+        "https://images.genius.com/a2a267834abe5f3bb4c2bb58b320fa81.1000x1000x1.jpg",
+        "https://upload.wikimedia.org/wikipedia/en/e/e9/Coolio_-_Gangsta%27s_Paradise.jpg",
         "https://media3.giphy.com/media/Wxc9iA6vBWMP9jbMjn/200w.gif?cid=6c09b952zt09oew5svjy3nehwfag00tnh6p6nw18n5acsbjb&ep=v1_gifs_search&rid=200w.gif&ct=g",
         "https://media3.giphy.com/media/Wxc9iA6vBWMP9jbMjn/200w.gif?cid=6c09b952zt09oew5svjy3nehwfag00tnh6p6nw18n5acsbjb&ep=v1_gifs_search&rid=200w.gif&ct=g",
         "https://media3.giphy.com/media/Wxc9iA6vBWMP9jbMjn/200w.gif?cid=6c09b952zt09oew5svjy3nehwfag00tnh6p6nw18n5acsbjb&ep=v1_gifs_search&rid=200w.gif&ct=g",
@@ -162,3 +165,13 @@ function decrease(){
 function increase(){
     song.volume += 0.2
 }
+
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = song.duration;
+
+    song.currentTime = (clickX / width) * duration;
+}
+
+handle.addEventListener('click',setProgress)
